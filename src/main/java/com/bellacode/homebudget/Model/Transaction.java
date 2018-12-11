@@ -27,8 +27,7 @@ public class Transaction {
     @Column(name = "amount")
     private double amount;
 
-    //@DateTimeFormat(pattern = "yyyy-mm-dd")
-    //@NotNull
+    @NotNull
     @Column(name = "data_operation")
     private LocalDate dataOperation;
 
