@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -23,23 +24,23 @@ public class User {
     @Column(name = "id")
     private long id;
 
-    @NotNull
+    @NotNull(message = "Field 'name' can not be empty")
     @Column(name = "name")
     private String name;
 
-    @NotNull
+    @NotNull(message = "Field 'email' can not be empty")
+    @Email
     @Column(name = "email")
     private String email;
 
-    @NotNull
+    @NotNull(message = "Field 'password' can not be empty")
     @Column(name = "password")
     private String password;
 
-    @NotNull
+    @NotNull(message = "Field 'active' can not be empty")
     @Column(name = "active")
     private int active;
 
-    @NotNull
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private Role role;

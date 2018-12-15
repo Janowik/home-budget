@@ -29,6 +29,26 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public void deleteUser(User user) {
+    public void deleteUser(long id) {
+
+        userRepository.deleteById(id);
+    }
+
+    @Override
+    public void updateUser(long id, User user) {
+        User updateUser = User.builder()
+                .id(id)
+                .name(user.getName())
+                .email(user.getEmail())
+                .password(bCryptPasswordEncoder.encode(user.getPassword()))
+                .active(user.getActive())
+                .role(Role.ROLE_USER)
+                .build();
+        userRepository.save(updateUser);
+    }
+
+    @Override
+    public User findUserByEmail(String email) {
+        return  userRepository.findUserByEmail(email);
     }
 }

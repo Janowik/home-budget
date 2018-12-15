@@ -23,24 +23,23 @@ public class Transaction {
     @Column(name = "id")
     private long id;
 
-    @NotNull
+    @NotNull(message = "Field 'amount' can not be empty")
     @Column(name = "amount")
     private double amount;
 
-    @NotNull
     @Column(name = "data_operation")
     private LocalDate dataOperation;
 
-    @NotNull
+    @NotNull(message = "Field 'comment' can not be empty")
     @Column(name = "comment")
     private String comment;
 
-    @NotNull
+    @NotNull(message = "Field 'type_transaction' can not be empty")
     @Column(name = "type_transaction")
     @Enumerated(EnumType.STRING)
     private TypeTransaction typeTransaction;
 
-    @NotNull
+    @NotNull(message = "Field 'category' can not be empty")
     @Column(name = "category")
     @Enumerated(EnumType.STRING)
     private Category category;
