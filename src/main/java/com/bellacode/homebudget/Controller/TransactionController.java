@@ -18,11 +18,9 @@ import java.util.Optional;
 @RequestMapping("api/v1/transactions")
 public class TransactionController {
 
-    final
-    TransactionRepository transactionRepository;
+    private final TransactionRepository transactionRepository;
 
-    final
-    TransactionService transactionService;
+    private final TransactionService transactionService;
 
     @Autowired
     public TransactionController(TransactionRepository transactionRepository, TransactionService transactionService) {
