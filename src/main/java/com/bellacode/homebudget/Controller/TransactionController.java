@@ -13,10 +13,10 @@ import java.util.Optional;
 @RequestMapping("transactions")
 public class TransactionController {
 
-    final
+    private final
     TransactionRepository transactionRepository;
 
-    final
+    private final
     TransactionService transactionService;
 
     @Autowired
