@@ -39,7 +39,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> registerNewUser(@Valid User user){
+    public ResponseEntity<User> registerNewUser(@Valid User user){
         User userExist = userService.findUserByEmail(user.getEmail());
         if (userExist != null){
             throw new UserEmailExistException("Email is already registered: " + user.getEmail());
@@ -47,10 +47,11 @@ public class UserController {
             userService.saveUser(user);
         }
         return new ResponseEntity<>(HttpStatus.CREATED);
+
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<User>> getUserByID(@PathVariable("id") long id){
+    public ResponseEntity<Optional<User>> getUserById(@PathVariable("id") long id){
         Optional<User> userExist = userRepository.findById(id);
         if (userExist.isPresent()){
             return new ResponseEntity<>(userExist, HttpStatus.OK);
@@ -70,7 +71,7 @@ public class UserController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @PutMapping(value = "/users/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<String> updateUser(@PathVariable("id") long id, @Valid User user){
         Optional<User> updateUser = userRepository.findById(id);
         if (updateUser.isPresent()){

@@ -28,9 +28,6 @@ public class RestExceptionHandler {
         return new ResponseEntity<>(exceptionResponse, HttpStatus.CONFLICT);
     }
 
-    /*
-        Handle any exception
-    */
     @ExceptionHandler
     public ResponseEntity<RestExceptionResponse> handlerException(Exception exc){
         RestExceptionResponse exceptionResponse = new RestExceptionResponse(

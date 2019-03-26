@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Service("transactionService")
 public class TransactionServiceImplementation implements TransactionService {
 
-    final
+    private final
     TransactionRepository transactionRepository;
 
     @Autowired

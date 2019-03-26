@@ -30,7 +30,6 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public void deleteUser(long id) {
-
         userRepository.deleteById(id);
     }
 
@@ -49,6 +48,6 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public User findUserByEmail(String email) {
-        return  userRepository.findUserByEmail(email);
+        return userRepository.findUserByEmail(email);
     }
 }
