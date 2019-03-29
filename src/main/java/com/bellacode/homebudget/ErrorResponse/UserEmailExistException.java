@@ -7,7 +7,7 @@ public class UserEmailExistException extends RuntimeException {
     public UserEmailExistException(String message) {
         super(message);
     }
-
+/*
     public UserEmailExistException(String message, Throwable cause) {
         super(message, cause);
     }
@@ -18,5 +18,5 @@ public class UserEmailExistException extends RuntimeException {
 
     public UserEmailExistException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
-    }
+    }*/
 }

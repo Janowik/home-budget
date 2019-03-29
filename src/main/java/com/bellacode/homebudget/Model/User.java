@@ -1,5 +1,6 @@
 package com.bellacode.homebudget.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -33,6 +34,7 @@ public class User {
     @Column(name = "email")
     private String email;
 
+    @JsonIgnore
     @NotNull(message = "Field 'password' can not be empty")
     @Column(name = "password")
     private String password;
@@ -47,4 +49,6 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Transaction> transactions;
+
+
 }
