@@ -17,7 +17,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.bellacode'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 10
+sourceCompatibility = 8
 
 repositories {
     mavenCentral()
@@ -31,7 +31,9 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('org.springframework.session:spring-session-core')
     
-    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.16'
+
+    //compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.16'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.1.2.RELEASE'
     
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
     runtimeOnly('mysql:mysql-connector-java')
